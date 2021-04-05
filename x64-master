@@ -4,11 +4,12 @@ CONFIG_TARGET_x86_64_Generic=y
 CONFIG_TARGET_IMAGES_GZIP=y
 CONFIG_TARGET_KERNEL_PARTSIZE=16
 CONFIG_TARGET_ROOTFS_PARTSIZE=300
+CONFIG_DEFAULT_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall=y
 
 #
 # Configuration
 #
-CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Server=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
