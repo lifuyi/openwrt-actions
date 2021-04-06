@@ -35,12 +35,12 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_URL: https://github.com/immortalwrt/immortalwrt
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
-        sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+        # cd openwrt
+        # sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
