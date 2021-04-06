@@ -33,16 +33,14 @@ jobs:
           sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/Lienol/openwrt
-        REPO_BRANCH: main
+        REPO_URL: https://github.com/immortalwrt/immortalwrt
+        REPO_BRANCH: master
       run: |
             git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-            cd openwrt
-            sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
-    - name: Import external feeds
-      working-directory: ./openwrt
-      run: |
-            git clone -b main https://github.com/xiaorouji/openwrt-passwall.git package/lienol
+#     - name: Import external feeds
+#       working-directory: ./openwrt
+#       run: |
+#             git clone -b main https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
